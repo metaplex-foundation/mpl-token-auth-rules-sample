@@ -1,8 +1,21 @@
-# Token Authorization Rules Example
+# Metaplex SAMPLE RULESET
+## NOT FINAL - The Final sample ruleset used for migration will be posted here as it gets updated, this currently contains test programs.
 
-This is example code for https://github.com/metaplex-foundation/token-authorization-rules.
 
-## Example
+
+This is the sample ruleset built on https://github.com/metaplex-foundation/token-authorization-rules.
+
+## Tools
+This repo contains a tool to use the sample ruleset. Below is an example of how to use it.
+
+```
+cargo run 
+```
+
+This will allow you to create the sample ruleset, if you would like to create your own ruleset you can use this as an example to tweak it.
+
+
+### Example
 ```
 $ cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.13s

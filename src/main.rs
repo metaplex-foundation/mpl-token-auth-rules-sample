@@ -7,6 +7,7 @@ use mpl_token_auth_rules::{
 };
 use rmp_serde::Serializer;
 use serde::Serialize;
+
 use solana_client::rpc_client::RpcClient;
 use solana_sdk::compute_budget::ComputeBudgetInstruction;
 use solana_sdk::{
@@ -474,10 +475,11 @@ fn main() {
     // --------------------------------
     // Serialize the RuleSet using RMP serde.
     let mut serialized_rule_set = Vec::new();
-    royalty_rule_set
+    royalty_rule_set.clone()
         .serialize(&mut Serializer::new(&mut serialized_rule_set))
         .unwrap();
-
+    let json = serde_json::to_string(&royalty_rule_set).unwrap();
+    println!("{}", json);
     // We need to write this RuleSet in chunks.
     let (buffer_pda, _buffer_bump) = mpl_token_auth_rules::pda::find_buffer_address(payer.pubkey());
 
